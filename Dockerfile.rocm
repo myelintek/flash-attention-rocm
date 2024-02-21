@@ -21,10 +21,11 @@ COPY ./ /workspace/flash-attention
 WORKDIR /workspace/flash-attention
 
 # Initialize git submodule and apply patch
-RUN git submodule update --init \
-  && PYTHON_SITE_PACKAGES=$(python -c 'import site; print(site.getsitepackages()[0])') \
-  && echo "Patching ${PYTHON_SITE_PACKAGES}/torch/utils/hipify/hipify_python.py" \
-  && patch "${PYTHON_SITE_PACKAGES}/torch/utils/hipify/hipify_python.py" hipify_patch.patch
+# RUN git submodule update --init \
+#   && PYTHON_SITE_PACKAGES=$(python -c 'import site; print(site.getsitepackages()[0])') \
+#   && echo "Patching ${PYTHON_SITE_PACKAGES}/torch/utils/hipify/hipify_python.py" \
+#   && patch "${PYTHON_SITE_PACKAGES}/torch/utils/hipify/hipify_python.py" hipify_patch.patch
+RUN git submodule update --init
 
 # ARG GPU_ARCHS=native
 # ARG MAX_JOBS=-1

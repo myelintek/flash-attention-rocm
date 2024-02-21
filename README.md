@@ -1,4 +1,13 @@
 # FlashAttention
+
+> MyelinTek Info:
+>
+> The MyelinTek fork adds fixes to the [ROCm official repo](https://github.com/ROCm/flash-attention/tree/flash_attention_for_rocm2)
+> whose [latest update](https://github.com/ROCm/flash-attention/commit/63ce40f08451dae239b267edce38571e50bde560) has been 8 month ago.
+> The applied fix is for [PyTorch 2.1+](https://github.com/ROCm/flash-attention/issues/20#issuecomment-1832147180) that no longer needs the hipify patch.
+>
+> This fix works for `rocm/pytorch:rocm6.0.2_ubuntu22.04_py3.10_pytorch_2.1.2`.
+
 This repository provides the official implementation of FlashAttention and
 FlashAttention-2 from the
 following papers.
